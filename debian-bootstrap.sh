@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bipn/env bash
 
 # Work in progress: create a list of commands necessary to get Stackage
 # up-and-running on a freshly installed Debian-based system (including Ubuntu).
@@ -19,13 +19,14 @@ apt-get update
 apt-get install -y software-properties-common
 
 # add-apt-repository ppa:hvr/ghc -y
-add-apt-repository -y ppa:marutter/rrutter
-apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
-add-apt-repository -y --keyserver hkp://keyserver.ubuntu.com:80 'deb http://download.mono-project.com/repo/debian wheezy main'
-add-apt-repository -y --keyserver hkp://keyserver.ubuntu.com:80 'deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main'
-add-apt-repository -y --keyserver hkp://keyserver.ubuntu.com:80 'deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main'
+# add-apt-repository -y ppa:marutter/rrutter
+# apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
+# add-apt-repository -y --keyserver hkp://keyserver.ubuntu.com:80 'deb http://download.mono-project.com/repo/debian wheezy main'
+# add-apt-repository -y --keyserver hkp://keyserver.ubuntu.com:80 'deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main'
+# add-apt-repository -y --keyserver hkp://keyserver.ubuntu.com:80 'deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main'
 
-GHCVER=8.2.2
+# TODO fix
+GHCVER=8.0.2
 
 apt-get update
 apt-get install -y \
@@ -36,6 +37,9 @@ apt-get install -y \
     fsharp \
     g++ \
     gawk \
+    ghc \
+    ghc-dynamic \
+    ghc-prof \
     # ghc-$GHCVER \
     # ghc-$GHCVER-dyn \
     # ghc-$GHCVER-htmldocs \
@@ -208,10 +212,10 @@ curl -OL https://github.com/google/protobuf/releases/download/v3.3.0/protoc-3.3.
   && rm -f protoc-3.3.0-linux-x84_64.zip
 
 # Install the TensorFlow C API.
-curl https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-1.1.0.tar.gz > libtensorflow.tar.gz \
-    && sudo tar zxf libtensorflow.tar.gz -C /usr \
-    && rm libtensorflow.tar.gz \
-    && ldconfig
+# curl https://storage.googleapis.com/tensorflow/libtensorflow/libtensorflow-cpu-linux-x86_64-1.1.0.tar.gz > libtensorflow.tar.gz \
+#     && sudo tar zxf libtensorflow.tar.gz -C /usr \
+#     && rm libtensorflow.tar.gz \
+#     && ldconfig
 
 # NOTE: also update Dockerfile when cuda version changes
 # Install CUDA toolkit
@@ -220,19 +224,19 @@ CUDA_PKG=8.0.61-1         # update this on new version
 CUDA_VER=${CUDA_PKG:0:3}
 CUDA_APT=${CUDA_VER/./-}
 
-pushd /tmp \
-    && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_${CUDA_PKG}_amd64.deb \
-    && dpkg -i cuda-repo-ubuntu1604_${CUDA_PKG}_amd64.deb \
-    && apt-get update -qq \
-    && apt-get install -y cuda-drivers cuda-core-${CUDA_APT} cuda-cudart-dev-${CUDA_APT} cuda-cufft-dev-${CUDA_APT} cuda-cublas-dev-${CUDA_APT} cuda-cusparse-dev-${CUDA_APT} cuda-cusolver-dev-${CUDA_APT} \
-    && rm cuda-repo-ubuntu1604_${CUDA_PKG}_amd64.deb \
-    && export CUDA_PATH=/usr/local/cuda-${CUDA_VER} \
-    && export LD_LIBRARY_PATH=${CUDA_PATH}/nvvm/lib64:${LD_LIBRARY_PATH+x} \
-    && export LD_LIBRARY_PATH=${CUDA_PATH}/lib64:${LD_LIBRARY_PATH} \
-    && export PATH=${CUDA_PATH}/bin:${PATH} \
-    && popd
+# pushd /tmp \
+#     && wget https://developer.download.nvidia.com/compute/cuda/repos/ubuntu1604/x86_64/cuda-repo-ubuntu1604_${CUDA_PKG}_amd64.deb \
+#     && dpkg -i cuda-repo-ubuntu1604_${CUDA_PKG}_amd64.deb \
+#     && apt-get update -qq \
+#     && apt-get install -y cuda-drivers cuda-core-${CUDA_APT} cuda-cudart-dev-${CUDA_APT} cuda-cufft-dev-${CUDA_APT} cuda-cublas-dev-${CUDA_APT} cuda-cusparse-dev-${CUDA_APT} cuda-cusolver-dev-${CUDA_APT} \
+#     && rm cuda-repo-ubuntu1604_${CUDA_PKG}_amd64.deb \
+#     && export CUDA_PATH=/usr/local/cuda-${CUDA_VER} \
+#     && export LD_LIBRARY_PATH=${CUDA_PATH}/nvvm/lib64:${LD_LIBRARY_PATH+x} \
+#     && export LD_LIBRARY_PATH=${CUDA_PATH}/lib64:${LD_LIBRARY_PATH} \
+#     && export PATH=${CUDA_PATH}/bin:${PATH} \
+#     && popd
 
 # non-free repo for mediabus-fdk-aac
-apt-add-repository multiverse \
-    && apt-get update \
-    && apt-get install -y nvidia-cuda-dev
+# apt-add-repository multiverse \
+#     && apt-get update \
+#     && apt-get install -y nvidia-cuda-dev
