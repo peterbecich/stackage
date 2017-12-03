@@ -40,10 +40,6 @@ apt-get install -y \
     ghc \
     ghc-dynamic \
     ghc-prof \
-    # ghc-$GHCVER \
-    # ghc-$GHCVER-dyn \
-    # ghc-$GHCVER-htmldocs \
-    # ghc-$GHCVER-prof \
     git \
     gradle \
     hscolour \
