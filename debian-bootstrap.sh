@@ -130,8 +130,6 @@ apt-get install -y \
     mono-mcs \
     nettle-dev \
     ninja-build \
-    nodejs \
-    npm \
     openjdk-8-jdk \
     python-mpltoolkits.basemap \
     python3-matplotlib \
@@ -150,6 +148,10 @@ apt-get install -y \
 locale-gen en_US.UTF-8
 
 curl -sSL https://get.haskellstack.org/ | sh
+
+curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
+apt-get install -y nodejs npm
+
 
 # Put documentation where we expect it
 mv /opt/ghc/$GHCVER/share/doc/ghc-$GHCVER/ /opt/ghc/$GHCVER/share/doc/ghc
