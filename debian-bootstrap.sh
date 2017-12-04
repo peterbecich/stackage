@@ -59,19 +59,14 @@ apt-get install -y \
     libfftw3-dev \
     libflac-dev \
     libfreenect-dev \
-    # libgd2-xpm-dev \
     libgeoip-dev \
     libgirepository1.0-dev \
     libglfw3-dev \
     libglib2.0-dev \
     libglu1-mesa-dev \
     libgmp3-dev \
-    # libgnutls-dev \
     libgsasl7-dev \
     libgsl0-dev \
-    # libgtk-3-dev \
-    # libgtk2.0-dev \
-    # libgtksourceview-3.0-dev \
     libhidapi-dev \
     libi2c-dev \
     libicu-dev \
@@ -90,7 +85,6 @@ apt-get install -y \
     libmono-2.0-dev \
     libmp3lame-dev \
     libmpfr-dev \
-    # libmysqlclient-dev \
     libncurses-dev \
     libnfc-dev \
     liboath-dev \
@@ -144,6 +138,13 @@ apt-get install -y \
     z3 \
     zip \
     zlib1g-dev
+
+    # libmysqlclient-dev \
+    # libgtk-3-dev \
+    # libgtk2.0-dev \
+    # libgtksourceview-3.0-dev \
+    # libgd2-xpm-dev \
+    # libgnutls-dev \
 
 locale-gen en_US.UTF-8
 
