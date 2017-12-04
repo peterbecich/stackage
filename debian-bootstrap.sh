@@ -151,7 +151,10 @@ locale-gen en_US.UTF-8
 curl -sSL https://get.haskellstack.org/ | sh
 
 curl -sL https://deb.nodesource.com/setup_9.x | sudo -E bash -
-apt-get install -y nodejs npm
+
+apt-get update
+
+apt-get install -y nodejs
 
 
 # Put documentation where we expect it
