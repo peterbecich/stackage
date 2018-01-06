@@ -27,6 +27,7 @@ apt-get install -y software-properties-common
 # add-apt-repository -y --keyserver hkp://keyserver.ubuntu.com:80 'deb http://download.mono-project.com/repo/debian wheezy-apache24-compat main'
 # add-apt-repository -y --keyserver hkp://keyserver.ubuntu.com:80 'deb http://download.mono-project.com/repo/debian wheezy-libjpeg62-compat main'
 
+# http://www.mono-project.com/download/#download-lin-debian
 apt-key adv --keyserver hkp://keyserver.ubuntu.com:80 --recv-keys 3FA7E0328081BFF6A14DA29AA6A19B38D3D831EF
 echo "deb http://download.mono-project.com/repo/debian stretch main" | tee /etc/apt/sources.list.d/mono-official.list
 
@@ -48,6 +49,10 @@ apt-get install -y \
 	# libmono-compilerservices-symbolwriter4.0-cil \
 	# mono-devel
 
+    # ghc-$GHCVER \
+    # ghc-$GHCVER-dyn \
+    # ghc-$GHCVER-htmldocs \
+    # ghc-$GHCVER-prof \
 
 
 apt-get install -y \
@@ -58,10 +63,6 @@ apt-get install -y \
     fsharp \
     g++ \
     gawk \
-    # ghc-$GHCVER \
-    # ghc-$GHCVER-dyn \
-    # ghc-$GHCVER-htmldocs \
-    # ghc-$GHCVER-prof \
     git \
     gradle \
     hscolour \
