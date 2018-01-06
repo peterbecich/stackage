@@ -30,18 +30,19 @@ GHCVER=8.2.2
 apt-get update
 
 apt-get install -y \
-	mono-runtime \
-	libfsharp-core4.3-cil \
-	libmono-corlib4.5-cil \
-	libmono-system-core4.0-cil \
-	libmono-system-io-compression4.0-cil \
-	libmono-system-numerics4.0-cil \
-	libmono-system-runtime4.0-cil \
-	libmono-system-windows-forms4.0-cil \
-	libmono-system4.0-cil \
-	mono-xbuild \
-	libmono-compilerservices-symbolwriter4.0-cil \
-	mono-devel
+	mono-complete
+	# mono-runtime \
+	# libfsharp-core4.3-cil \
+	# libmono-corlib4.5-cil \
+	# libmono-system-core4.0-cil \
+	# libmono-system-io-compression4.0-cil \
+	# libmono-system-numerics4.0-cil \
+	# libmono-system-runtime4.0-cil \
+	# libmono-system-windows-forms4.0-cil \
+	# libmono-system4.0-cil \
+	# mono-xbuild \
+	# libmono-compilerservices-symbolwriter4.0-cil \
+	# mono-devel
 
 
 
