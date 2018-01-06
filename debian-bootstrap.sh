@@ -36,10 +36,10 @@ apt-get install -y \
     fsharp \
     g++ \
     gawk \
-    ghc-$GHCVER \
-    ghc-$GHCVER-dyn \
-    ghc-$GHCVER-htmldocs \
-    ghc-$GHCVER-prof \
+    # ghc-$GHCVER \
+    # ghc-$GHCVER-dyn \
+    # ghc-$GHCVER-htmldocs \
+    # ghc-$GHCVER-prof \
     git \
     gradle \
     hscolour \
