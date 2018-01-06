@@ -54,6 +54,7 @@ apt-get install -y \
     # ghc-$GHCVER-htmldocs \
     # ghc-$GHCVER-prof \
 
+    # libgd2-xpm-dev \
 
 apt-get install -y \
     build-essential \
@@ -82,14 +83,13 @@ apt-get install -y \
     libfftw3-dev \
     libflac-dev \
     libfreenect-dev \
-    libgd2-xpm-dev \
     libgeoip-dev \
     libgirepository1.0-dev \
     libglfw3-dev \
     libglib2.0-dev \
     libglu1-mesa-dev \
     libgmp3-dev \
-    libgnutls-dev \
+    libgnutls28-dev \
     libgsasl7-dev \
     libgsl0-dev \
     libgtk-3-dev \
